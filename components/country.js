@@ -20,7 +20,7 @@ export default function Country({ name, region, subregion, flags }) {
             alt={`Flag of ${name}`}
           />
         )}
-        <h2 class="text-1xl font-bold dark:text-white">{name}</h2>
+        <h2 className="text-1xl font-bold dark:text-white">{name}</h2>
         <br />
         <Tag text={region}></Tag>
         <Tag text={subregion}></Tag>

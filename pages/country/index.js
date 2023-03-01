@@ -70,12 +70,24 @@ export default function Country({ allCountries }) {
     <Layout>
       <title>{siteTitle}</title>
       <section>
-        <div>
-          <h1>Countries</h1>
+        <div className="">
+          <h1 className="text-2xl font-bold dark:text-white text-center">
+            Countries
+          </h1>
           {/* Filter by Continent */}
           <div>
-            <label>Continent</label>
+            <label
+              className="text-slate-700 font-medium text-sm 
+  mb-2
+  ml-2 sm:ml-2 md:ml-3 lg:ml-4 xl:ml-4;"
+            >
+              Continent
+            </label>
             <select
+              className=" w-full sm:w-full md:w-1/4 bg-white border border-slate-300 hover:border-slate-400 
+  m-2 sm:m-2 md:m-3 lg:m-4 xl:m-4
+  p-1
+  rounded shadow-sm leading-tight focus:outline-none"
               id={uuidv4()}
               value={continent ? continent : continents[0]}
               onChange={handleContinentChange}
@@ -89,12 +101,19 @@ export default function Country({ allCountries }) {
                   )
               )}
             </select>
-          </div>
-          {/* Items per Page */}
-          <div>
-            <label>Items</label>
+            {/* Items per Page */}
+            <label
+              className="text-slate-700 font-medium text-sm 
+  mb-2
+  ml-2 sm:ml-2 md:ml-3 lg:ml-4 xl:ml-4;"
+            >
+              Items
+            </label>
             <select
-              className="filters-select"
+              className=" w-full sm:w-full md:w-1/4 bg-white border border-slate-300 hover:border-slate-400 
+  m-2 sm:m-2 md:m-3 lg:m-4 xl:m-4
+  p-1
+  rounded shadow-sm leading-tight focus:outline-none"
               id={uuidv4()}
               value={pageSize}
               onChange={handleItemsPerPageChange}
@@ -105,12 +124,19 @@ export default function Country({ allCountries }) {
                 </option>
               ))}
             </select>
-          </div>
-          {/* Sort Order */}
-          <div>
-            <label>Sort By</label>
+            {/* Sort Order */}
+            <label
+              className="text-slate-700 font-medium text-sm 
+  mb-2
+  ml-2 sm:ml-2 md:ml-3 lg:ml-4 xl:ml-4;"
+            >
+              Sort By
+            </label>
             <select
-              className="filters-select"
+              className=" w-full sm:w-full md:w-1/4 bg-white border border-slate-300 hover:border-slate-400 
+  m-2 sm:m-2 md:m-3 lg:m-4 xl:m-4
+  p-1
+  rounded shadow-sm leading-tight focus:outline-none"
               id={uuidv4()}
               value={sortOrder ? sortOrder : sort[0]}
               onChange={handleSortOrderChange}
