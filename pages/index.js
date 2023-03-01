@@ -13,8 +13,9 @@ export default function Home({ allCountries }) {
   return (
     <Layout home>
       <title>{siteTitle}</title>
+
       <section>
-        <p>
+        <p className="text-1xl font-bold ">
           (This is a sample website based on the{" "}
           <a href="https://nextjs.org/learn"> Next.js tutorial</a>.)
         </p>
@@ -23,4 +24,9 @@ export default function Home({ allCountries }) {
       </section>
     </Layout>
   );
+  // return (
+  //   <h1 className="text-3xl font-bold text-slate-500 underline">
+  //     Hello world!
+  //   </h1>
+  // );
 }

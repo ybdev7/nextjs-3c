@@ -3,6 +3,7 @@ npm install remark remark-html gray-matter date-fns uuid
 npm install -D tailwindcss postcss autoprefixer
 npx tailwindcss init -p
 Add the paths to all of your template files in your tailwind.config.js file.
+add _app.js file with import of globals.css
 setup next.config.js to include url for images 
 
 npm run dev

@@ -5,17 +5,22 @@ import Tag from "./tag";
 export default function Country({ name, region, subregion, flags }) {
   return (
     <Link href={`/country/${name}`}>
-      <div>
+      <div
+        className="bg-white hover:bg-slate-50 border-slate-400 border rounded-lg shadow-md hover:shadow-lg 
+  p-2 sm:p-2 md:p-3 lg:p-4 xl:p-4 
+  m-2 sm:m-2 md:m-3 lg:m-4 xl:m-4;"
+      >
         {flags && flags.svg && (
           <Image
             priority
-            src={flags.svg}
+            className="shadow rounded max-w-full h-auto align-middle border-none"
             height={44}
-            width={44}
+            width={84}
+            src={flags.svg}
             alt={`Flag of ${name}`}
           />
         )}
-        {name}
+        <h2 class="text-1xl font-bold dark:text-white">{name}</h2>
         <br />
         <Tag text={region}></Tag>
         <Tag text={subregion}></Tag>
