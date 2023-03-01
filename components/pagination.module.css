@@ -1,0 +1,35 @@
+.disable {
+  pointer-events: none;
+  cursor: default;
+  font-size: 16px;
+  color: darkgrey;
+}
+.pagination {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  list-style: none;
+}
+
+.pageLink {
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.pageItem {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  font-size: 16px;
+  color: darkgrey;
+}
+
+.pageItemSelected {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  color: darkblue;
+  font-size: 18px;
+}
