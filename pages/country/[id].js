@@ -32,6 +32,11 @@ export default function Country({ countryData }) {
           <h2 className="text-center text-slate-900 text-2xl font-bold">
             {countryData.id}
           </h2>
+          {Object.entries(countryData.nativeNames).map(([key, value]) => (
+            <h2 className="text-center text-salte-800 text-xl">
+              {value.official}
+            </h2>
+          ))}
           <div className="flex justify-center mt-6">
             <Image
               priority
@@ -43,10 +48,17 @@ export default function Country({ countryData }) {
             />
           </div>
 
-          {`Population: ${countryData.population} `}
+          {`Population: ${countryData.population.toLocaleString()} `}
           <br />
           {`Capital: ${countryData.capital}`}
           <br />
+          {`Languages: ${Object.entries(countryData.languages)
+            .map(([key, value]) => value)
+            .join(", ")}`}
+          <br />
+          {`Currencies: ${Object.entries(countryData.currencies)
+            .map(([key, value]) => `${value.symbol} (${key} - ${value.name})`)
+            .join(", ")}`}
         </div>
 
         <br />
