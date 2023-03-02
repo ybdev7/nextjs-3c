@@ -22,7 +22,7 @@ export async function getStaticPaths() {
 export default function Country({ countryData }) {
   return (
     <Layout>
-      <div className="">
+      <div className="flex justify-center">
         <div
           className="w-1/2 bg-slate-50 hover:bg-slate-100 border-slate-400 border rounded-lg shadow-md hover:shadow-lg 
   p-2 sm:p-2 md:p-3 lg:p-4 xl:p-4 
@@ -50,10 +50,11 @@ export default function Country({ countryData }) {
 
         <br />
         {countryData.description}
-
+      </div>
+      <div>
         <div className="m-4">
           <Link
-            className="px-6 py-3 text-blue-100 no-underline bg-blue-500 rounded hover:bg-blue-600 hover:underline hover:text-blue-200"
+            className="px-4 py-2 text-blue-100 no-underline bg-blue-500 rounded hover:bg-blue-600 hover:underline hover:text-blue-200"
             href="/country"
           >
             ← Back to Countries List
