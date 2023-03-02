@@ -3,14 +3,7 @@ import Layout, { siteTitle } from "../components/layout";
 import { getAllCountries } from "../lib/country";
 import ButtonLink from "../components/buttonlink";
 
-export async function getStaticProps() {
-  const allCountries = await getAllCountries();
-  // const allColdCoffees = await getColdCoffees();
-  return {
-    props: { allCountries: allCountries },
-  };
-}
-export default function Home({ allCountries }) {
+export default function Home() {
   return (
     <Layout home>
       <section className="text-center">
@@ -29,7 +22,6 @@ export default function Home({ allCountries }) {
         </p>
 
         <div container>
-          {/* <div grid grid-cols-1 gap-12> */}
           <div className="flex justify-center my-10">
             <ButtonLink href="/country" text="Countries"></ButtonLink>
             <ButtonLink href="/capital" text="Capitals"></ButtonLink>
@@ -39,9 +31,4 @@ export default function Home({ allCountries }) {
       </section>
     </Layout>
   );
-  // return (
-  //   <h1 className="text-3xl font-bold text-slate-500 underline">
-  //     Hello world!
-  //   </h1>
-  // );
 }

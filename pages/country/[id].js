@@ -2,6 +2,7 @@ import Layout from "../../components/layout";
 import Image from "next/image";
 import { getAllCountriesIds, getCountryData } from "../../lib/country";
 import Link from "next/link";
+import ButtonLink from "../../components/buttonlink";
 
 export async function getStaticProps({ params }) {
   const countryData = await getCountryData(params.id);
@@ -52,14 +53,10 @@ export default function Country({ countryData }) {
         {countryData.description}
       </div>
       <div>
-        <div className="m-4">
-          <Link
-            className="px-4 py-2 text-blue-100 no-underline bg-blue-500 rounded hover:bg-blue-600 hover:underline hover:text-blue-200"
-            href="/country"
-          >
-            ← Back to Countries List
-          </Link>
-        </div>
+        <ButtonLink
+          href="/country"
+          text=" ← Back to Countries List"
+        ></ButtonLink>
       </div>
     </Layout>
   );

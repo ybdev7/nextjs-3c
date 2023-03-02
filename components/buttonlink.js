@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-export default function ButtinLink({ href, text }) {
+export default function ButtonLink({ href, text }) {
   return (
     <div className="m-4">
       <Link

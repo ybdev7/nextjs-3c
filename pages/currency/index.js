@@ -1,3 +1,9 @@
+import Layout from "../../components/layout";
+
 export default function Currency({}) {
-  return <div>Currencies</div>;
+  return (
+    <Layout>
+      <div>Capitals</div>
+    </Layout>
+  );
 }

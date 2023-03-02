@@ -176,20 +176,6 @@ export default function Country({ allCountries }) {
                 </div>
               )
             )}
-            {/* <ul>
-              {paginatedCountries.map(
-                ({ id, common, flags, region, subregion }) => (
-                  <li key={id}>
-                    <CountryCard
-                      name={id}
-                      region={region}
-                      subregion={subregion}
-                      flags={flags}
-                    />
-                  </li>
-                )
-              )}
-            </ul> */}
           </div>
         </div>
       </section>

@@ -1,3 +1,9 @@
+import Layout from "../../components/layout";
+
 export default function Capital({}) {
-  return <div>Capitals</div>;
+  return (
+    <Layout>
+      <div>Capitals</div>
+    </Layout>
+  );
 }
