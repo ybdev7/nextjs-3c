@@ -5,25 +5,26 @@ import Tag from "./tag";
 export default function Country({ name, region, subregion, flags }) {
   return (
     <Link href={`/country/${name}`}>
-      <div
-        className="bg-white hover:bg-slate-50 border-slate-400 border rounded-lg shadow-md hover:shadow-lg 
-  p-2 sm:p-2 md:p-3 lg:p-4 xl:p-4 
-  m-2 sm:m-2 md:m-3 lg:m-4 xl:m-4;"
-      >
+      <div className="flex flex-col items-center bg-white md:flex-row md:max-w-xl hover:bg-slate-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700">
         {flags && flags.svg && (
           <Image
             priority
-            className="shadow rounded max-w-full h-auto align-middle border-none"
-            height={44}
-            width={84}
+            className="object-cover w-full rounded-t-lg h-auto md:h-auto md:w-48 md:rounded-none md:rounded-l-lg"
+            height={0}
+            width={0}
             src={flags.svg}
             alt={`Flag of ${name}`}
           />
         )}
-        <h2 className="text-1xl font-bold dark:text-white">{name}</h2>
-        <br />
-        <Tag text={region}></Tag>
-        <Tag text={subregion}></Tag>
+        <div class="flex flex-col justify-between p-4 leading-normal">
+          <div>
+            <h2 className="text-1xl font-bold dark:text-white">{name}</h2>
+          </div>
+          <div className="grid flex-col justify-items-start mt-10">
+            <Tag text={region}></Tag>
+            <Tag text={subregion}></Tag>
+          </div>
+        </div>
       </div>
     </Link>
   );

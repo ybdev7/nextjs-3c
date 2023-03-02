@@ -153,7 +153,7 @@ export default function Country({ allCountries }) {
           </div>
         </div>
 
-        <div className="mx-10">
+        <div className="mx-10 my-2">
           <Pagination
             items={countries.length}
             currentPage={currentPage}
@@ -163,7 +163,7 @@ export default function Country({ allCountries }) {
         </div>
 
         <div class="container mx-auto">
-          <div class="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
+          <div class="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 px-4">
             {paginatedCountries.map(
               ({ id, common, flags, region, subregion }) => (
                 <div key={id}>

@@ -6,7 +6,7 @@ export const siteTitle = "Counries - Next.js Sample Website";
 
 export default function Layout({ children, home }) {
   return (
-    <div>
+    <div className="flex flex-col min-h-screen">
       <header>
         {home ? (
           <>
@@ -28,6 +28,50 @@ export default function Layout({ children, home }) {
       </header>
       <main>{children}</main>
       {!home && <ButtonLink href="/" text=" ← Back to home"></ButtonLink>}
+
+      <footer className="mt-auto p-4 bg-slate-50 sm:p-6 dark:bg-gray-900">
+        <div className="md:flex md:justify-between">
+          <div class="mb-6 md:mb-0">
+            <span>3C - Countries, Capitals & Currencies</span>
+          </div>
+          <div class="grid grid-cols-2 gap-8 sm:gap-6 sm:grid-cols-3">
+            <div>
+              <h2 class="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">
+                Resources
+              </h2>
+              <ul class="text-gray-600 dark:text-gray-400">
+                <li>
+                  <a href="https://nextjs.com/" class="hover:underline">
+                    NextJS
+                  </a>
+                </li>
+                <li>
+                  <a href="https://restcountries.com/" class="hover:underline">
+                    REST Countries
+                  </a>
+                </li>
+                <li>
+                  <a href="https://tailwindcss.com/" class="hover:underline">
+                    Tailwind CSS
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <div>
+              <h2 class="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">
+                Follow us
+              </h2>
+              <ul class="text-gray-600 dark:text-gray-400">
+                <li class="mb-4">
+                  <a href="https://github.com/ybdev7" class="hover:underline ">
+                    Github
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </footer>
     </div>
   );
 }
