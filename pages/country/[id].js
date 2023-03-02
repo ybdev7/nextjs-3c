@@ -48,17 +48,31 @@ export default function Country({ countryData }) {
             />
           </div>
 
-          {`Population: ${countryData.population.toLocaleString()} `}
+          <label className="font-bold">Population: </label>
+          <label className="text-slate-900">
+            {countryData.population.toLocaleString()}
+          </label>
+
           <br />
-          {`Capital: ${countryData.capital}`}
+
+          <label className="font-bold">Capital: </label>
+          <label className="text-slate-900">{countryData.capital}</label>
           <br />
-          {`Languages: ${Object.entries(countryData.languages)
-            .map(([key, value]) => value)
-            .join(", ")}`}
+          <label className="font-bold">Languages: </label>
+          <label className="text-slate-900">
+            {Object.entries(countryData.languages)
+              .map(([key, value]) => value)
+              .join(", ")}
+          </label>
+
           <br />
-          {`Currencies: ${Object.entries(countryData.currencies)
-            .map(([key, value]) => `${value.symbol} (${key} - ${value.name})`)
-            .join(", ")}`}
+
+          <label className="font-bold">Currencies: </label>
+          <label className="text-slate-900">
+            {Object.entries(countryData.currencies)
+              .map(([key, value]) => `${value.symbol} (${key} - ${value.name})`)
+              .join(", ")}
+          </label>
         </div>
 
         <br />

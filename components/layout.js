@@ -10,7 +10,7 @@ export default function Layout({ children, home }) {
       <header>
         {home ? (
           <>
-            <h1 className="text-center mt-10 mb-4 text-4xl font-extrabold leading-none tracking-tight text-gray-900 md:text-5xl lg:text-6xl dark:text-white">
+            <h1 className="text-center mt-10 mb-4 text-4xl font-extrabold leading-none tracking-tight text-gray-900 md:text-5xl lg:text-6xl ">
               {name}
             </h1>
           </>
@@ -19,7 +19,7 @@ export default function Layout({ children, home }) {
             <Link
               href="/"
               className=" rounded-full bg-slate-100 border 
-             text-center py-2 px-4 mb-4 text-4xl font-extrabold leading-none tracking-tight text-gray-900 md:text-5xl lg:text-6xl dark:text-white"
+             text-center py-2 px-4 mb-4 text-4xl font-extrabold leading-none tracking-tight text-gray-900 md:text-5xl lg:text-6xl "
             >
               {logoName}
             </Link>
@@ -29,17 +29,17 @@ export default function Layout({ children, home }) {
       <main>{children}</main>
       {!home && <ButtonLink href="/" text=" ← Back to home"></ButtonLink>}
 
-      <footer className="mt-auto p-4 bg-slate-50 sm:p-6 dark:bg-gray-900">
+      <footer className="mt-auto p-4 bg-slate-50 sm:p-6 ">
         <div className="md:flex md:justify-between">
           <div class="mb-6 md:mb-0">
             <span>3C - Countries, Capitals & Currencies</span>
           </div>
           <div class="grid grid-cols-2 gap-8 sm:gap-6 sm:grid-cols-3">
             <div>
-              <h2 class="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">
+              <h2 class="mb-6 text-sm font-semibold text-gray-900 uppercase ">
                 Resources
               </h2>
-              <ul class="text-gray-600 dark:text-gray-400">
+              <ul class="text-gray-600 ">
                 <li>
                   <a href="https://nextjs.com/" class="hover:underline">
                     NextJS
@@ -58,10 +58,10 @@ export default function Layout({ children, home }) {
               </ul>
             </div>
             <div>
-              <h2 class="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">
+              <h2 class="mb-6 text-sm font-semibold text-gray-900 uppercase ">
                 Follow us
               </h2>
-              <ul class="text-gray-600 dark:text-gray-400">
+              <ul class="text-gray-600 ">
                 <li class="mb-4">
                   <a href="https://github.com/ybdev7" class="hover:underline ">
                     Github

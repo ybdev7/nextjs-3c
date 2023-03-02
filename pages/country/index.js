@@ -71,9 +71,7 @@ export default function Country({ allCountries }) {
       <title>{siteTitle}</title>
       <section>
         <div className="">
-          <h1 className="text-2xl font-bold dark:text-white text-center">
-            Countries
-          </h1>
+          <h1 className="text-2xl font-bold  text-center">Countries</h1>
           {/* Filter by Continent */}
           <div>
             <label

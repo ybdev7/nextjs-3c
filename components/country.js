@@ -5,7 +5,7 @@ import Tag from "./tag";
 export default function Country({ name, region, subregion, flags }) {
   return (
     <Link href={`/country/${name}`}>
-      <div className="flex flex-col items-center bg-white md:flex-row md:max-w-xl hover:bg-slate-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700">
+      <div className="flex flex-col items-center bg-white md:flex-row md:max-w-xl hover:bg-slate-100 ">
         {flags && flags.svg && (
           <Image
             priority
@@ -18,7 +18,7 @@ export default function Country({ name, region, subregion, flags }) {
         )}
         <div class="flex flex-col justify-between p-4 leading-normal">
           <div>
-            <h2 className="text-1xl font-bold dark:text-white">{name}</h2>
+            <h2 className="text-1xl font-bold ">{name}</h2>
           </div>
           <div className="grid flex-col justify-items-start mt-10">
             <Tag text={region}></Tag>
