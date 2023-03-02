@@ -19,8 +19,13 @@ export default function Layout({ children, home }) {
       </header>
       <main>{children}</main>
       {!home && (
-        <div className="">
-          <Link href="/">← Back to home</Link>
+        <div className="m-4 py-4">
+          <Link
+            className="px-6 py-3 text-blue-100 no-underline bg-blue-500 rounded hover:bg-blue-600 hover:underline hover:text-blue-200"
+            href="/"
+          >
+            ← Back to home
+          </Link>
         </div>
       )}
     </div>

@@ -153,27 +153,45 @@ export default function Country({ allCountries }) {
           </div>
         </div>
 
-        <Pagination
-          items={countries.length}
-          currentPage={currentPage}
-          pageSize={pageSize}
-          onPageChange={onPageChange}
-        />
+        <div className="mx-10">
+          <Pagination
+            items={countries.length}
+            currentPage={currentPage}
+            pageSize={pageSize}
+            onPageChange={onPageChange}
+          />
+        </div>
 
-        <ul>
-          {paginatedCountries.map(
-            ({ id, common, flags, region, subregion }) => (
-              <li key={id}>
-                <CountryCard
-                  name={id}
-                  region={region}
-                  subregion={subregion}
-                  flags={flags}
-                />
-              </li>
-            )
-          )}
-        </ul>
+        <div class="container mx-auto">
+          <div class="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
+            {paginatedCountries.map(
+              ({ id, common, flags, region, subregion }) => (
+                <div key={id}>
+                  <CountryCard
+                    name={id}
+                    region={region}
+                    subregion={subregion}
+                    flags={flags}
+                  />
+                </div>
+              )
+            )}
+            {/* <ul>
+              {paginatedCountries.map(
+                ({ id, common, flags, region, subregion }) => (
+                  <li key={id}>
+                    <CountryCard
+                      name={id}
+                      region={region}
+                      subregion={subregion}
+                      flags={flags}
+                    />
+                  </li>
+                )
+              )}
+            </ul> */}
+          </div>
+        </div>
       </section>
 
       <Pagination

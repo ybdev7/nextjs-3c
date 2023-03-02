@@ -22,22 +22,43 @@ export async function getStaticPaths() {
 export default function Country({ countryData }) {
   return (
     <Layout>
-      <div>
-        <Image
-          priority
-          src={countryData.flags.svg}
-          height={144}
-          width={188}
-          alt={countryData.id}
-        />
-        <h2>{countryData.id}</h2>
-      </div>
+      <div className="">
+        <div
+          className="w-1/2 bg-slate-50 hover:bg-slate-100 border-slate-400 border rounded-lg shadow-md hover:shadow-lg 
+  p-2 sm:p-2 md:p-3 lg:p-4 xl:p-4 
+  m-2 sm:m-2 md:m-3 lg:m-4 xl:m-4"
+        >
+          <h2 className="text-center text-slate-900 text-2xl font-bold">
+            {countryData.id}
+          </h2>
+          <div className="flex justify-center mt-6">
+            <Image
+              priority
+              className="shadow rounded max-w-full h-auto align-middle border-none "
+              src={countryData.flags.svg}
+              height={144}
+              width={188}
+              alt={countryData.id}
+            />
+          </div>
 
-      <br />
-      {countryData.description}
+          {`Population: ${countryData.population} `}
+          <br />
+          {`Capital: ${countryData.capital}`}
+          <br />
+        </div>
 
-      <div>
-        <Link href="/country">← Back to Countries List</Link>
+        <br />
+        {countryData.description}
+
+        <div className="m-4">
+          <Link
+            className="px-6 py-3 text-blue-100 no-underline bg-blue-500 rounded hover:bg-blue-600 hover:underline hover:text-blue-200"
+            href="/country"
+          >
+            ← Back to Countries List
+          </Link>
+        </div>
       </div>
     </Layout>
   );
