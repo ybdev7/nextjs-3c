@@ -15,7 +15,7 @@ export default function Layout({ children, home }) {
             </h1>
           </>
         ) : (
-          <div className="my-5 text-center">
+          <div className="my-5 text-center pb-4">
             <Link
               href="/"
               className=" rounded-full bg-slate-100 border 
