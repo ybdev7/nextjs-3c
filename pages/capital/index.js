@@ -1,9 +1,19 @@
+import CapitalList from "../../components/capitalList";
 import Layout from "../../components/layout";
+import { getAllCapitals } from "../../lib/country";
 
-export default function Capital({}) {
+export async function getStaticProps() {
+  const capitals = await getAllCapitals();
+  return {
+    props: { allCapitals: capitals },
+  };
+}
+
+export default function Capital({ allCapitals }) {
+  console.log(allCapitals.length);
   return (
     <Layout>
-      <div>Capitals</div>
+      <CapitalList allCapitals={allCapitals} />
     </Layout>
   );
 }
