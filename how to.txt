@@ -1,5 +1,5 @@
 npx create-next-app@latest nextjs-coffee --use-npm --example "https://github.com/vercel/next-learn/tree/master/basics/learn-starter"
-npm install remark remark-html gray-matter date-fns uuid
+npm install remark remark-html gray-matter date-fns uuid react-icons
 npm install -D tailwindcss postcss autoprefixer
 npx tailwindcss init -p
 Add the paths to all of your template files in your tailwind.config.js file.
@@ -8,3 +8,4 @@ setup next.config.js to include url for images
 
 npm run dev
 code changes
+

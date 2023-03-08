@@ -27,7 +27,7 @@ export default function Country({ countryData }) {
       <div className="flex justify-center">
         {/* Card */}
         <div
-          className="w-4/5 md:w-2/3 lg:w-1/2 
+          className="w-4/5 md:w-2/3 lg:w-2/5 
           bg-slate-50 hover:bg-slate-100 border-slate-400 border rounded-lg shadow-md hover:shadow-lg "
         >
           {/* container for image */}
@@ -75,6 +75,20 @@ export default function Country({ countryData }) {
               .map(([key, value]) => `${value.symbol} (${key} - ${value.name})`)
               .join(", ")}
           </label>
+          {countryData.region && countryData.region.length > 0 && (
+            <>
+              <br />
+              <label className="font-bold">Region: </label>
+              <label className="text-slate-900">{countryData.region}</label>
+            </>
+          )}
+          {countryData.region && countryData.subregion.length > 0 && (
+            <>
+              <br />
+              <label className="font-bold">Subregion: </label>
+              <label className="text-slate-900">{countryData.subregion}</label>
+            </>
+          )}
         </div>
       </div>
       <div
