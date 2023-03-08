@@ -10,6 +10,11 @@ import list from "./list";
 import GenericList from "./list";
 
 function _countryList({ allCountries, continent, sortOrder, itemsPerPage }) {
+  const [currentPage, setCurrentPage] = useState(1);
+  const onPageChange = (page) => {
+    setCurrentPage(page);
+  };
+
   function inContinent(country) {
     if (continent === "All") return true;
     return country && country.continents && country.continents[0] === continent;
@@ -26,12 +31,19 @@ function _countryList({ allCountries, continent, sortOrder, itemsPerPage }) {
   }
 
   const items = Array.from(allCountries.filter(inContinent)).sort(sortBy);
+
+  //return to first page if currentPage becomes out of range for pagination
+  if (items.length < itemsPerPage * (currentPage - 1)) {
+    setCurrentPage(1);
+  }
   return (
     <>
       <GenericList
         items={items}
         itemsPerPage={itemsPerPage}
         cardfn={Country}
+        currentPage={currentPage}
+        onPageChange={onPageChange}
       ></GenericList>
     </>
   );

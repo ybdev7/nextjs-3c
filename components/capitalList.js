@@ -3,8 +3,8 @@ import { sort } from "./country";
 import withContinent from "./withContinent";
 import withPerPage from "./withPerPage";
 import withSort from "./withSort";
-import Pagination from "./pagination";
-import { usePaginate } from "../hooks/usePaginate";
+import CapitalCard from "./capital";
+import GenericList from "./list";
 
 function _capitalList({ allCapitals, continent, sortOrder, itemsPerPage }) {
   const [currentPage, setCurrentPage] = useState(1);
@@ -27,39 +27,25 @@ function _capitalList({ allCapitals, continent, sortOrder, itemsPerPage }) {
   }
 
   function inContinent(capital) {
-    // console.log("here");
-    // console.log(capi.capital + " " + continent);
+    if (continent === "All") return true;
     return capital && capital.continents && capital.continents[0] === continent;
   }
-  const filteredCapitals = Array.from(
-    continent === "All" ? allCapitals : allCapitals.filter(inContinent)
-  ).sort(sortBy);
 
-  console.log(filteredCapitals.length);
-  const paginatedCapitals = usePaginate(
-    filteredCapitals,
-    currentPage,
-    itemsPerPage
-  );
+  const items = Array.from(allCapitals.filter(inContinent)).sort(sortBy);
 
-  console.log(paginatedCapitals.length);
+  if (items.length < itemsPerPage * (currentPage - 1)) {
+    setCurrentPage(1);
+  }
+
   return (
     <>
-      <div className="mx-10 my-2">
-        <Pagination
-          items={filteredCapitals.length}
-          currentPage={currentPage}
-          pageSize={itemsPerPage}
-          onPageChange={onPageChange}
-        />
-      </div>
-      <div>
-        {paginatedCapitals.map((item) => (
-          <div>
-            {item.capital} - {item.country}
-          </div>
-        ))}
-      </div>
+      <GenericList
+        items={items}
+        itemsPerPage={itemsPerPage}
+        cardfn={CapitalCard}
+        currentPage={currentPage}
+        onPageChange={onPageChange}
+      ></GenericList>
     </>
   );
 }

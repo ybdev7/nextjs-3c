@@ -1,17 +1,20 @@
 import { v4 as uuidv4 } from "uuid";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Pagination from "./pagination";
 import { usePaginate } from "../hooks/usePaginate";
 
-function GenericList({ items, itemsPerPage, cardfn }) {
-  const [currentPage, setCurrentPage] = useState(1);
-  const onPageChange = (page) => {
-    setCurrentPage(page);
-  };
+function GenericList({
+  items,
+  itemsPerPage,
+  onPageChange,
+  currentPage,
+  cardfn,
+}) {
+  //   const [currentPage, setCurrentPage] = useState(1);
+  //   const onPageChange = (page) => {
+  //     setCurrentPage(page);
+  //   };
 
-  //const filteredItems = items; //Array.from(items.filter(filterfn)).sort(sorterfn);
-
-  console.log(items.length);
   const paginatedItems = usePaginate(items, currentPage, itemsPerPage);
 
   console.log(paginatedItems.length);
