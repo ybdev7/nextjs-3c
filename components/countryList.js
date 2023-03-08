@@ -1,4 +1,4 @@
-import CountryCard from "./country";
+import Country from "./country";
 import { useState } from "react";
 import { sort } from "./country";
 import withContinent from "./withContinent";
@@ -6,14 +6,12 @@ import withPerPage from "./withPerPage";
 import withSort from "./withSort";
 import Pagination from "./pagination";
 import { usePaginate } from "../hooks/usePaginate";
+import list from "./list";
+import GenericList from "./list";
 
 function _countryList({ allCountries, continent, sortOrder, itemsPerPage }) {
-  const [currentPage, setCurrentPage] = useState(1);
-  const onPageChange = (page) => {
-    setCurrentPage(page);
-  };
-
   function inContinent(country) {
+    if (continent === "All") return true;
     return country && country.continents && country.continents[0] === continent;
   }
 
@@ -27,44 +25,14 @@ function _countryList({ allCountries, continent, sortOrder, itemsPerPage }) {
       return countryA.population - countryB.population;
   }
 
-  const filteredCountries = Array.from(
-    continent === "All" ? allCountries : allCountries.filter(inContinent)
-  ).sort(sortBy);
-
-  console.log(filteredCountries.length);
-  const paginatedCountries = usePaginate(
-    filteredCountries,
-    currentPage,
-    itemsPerPage
-  );
-
-  console.log(paginatedCountries.length);
+  const items = Array.from(allCountries.filter(inContinent)).sort(sortBy);
   return (
     <>
-      <div className="mx-10 my-2">
-        <Pagination
-          items={filteredCountries.length}
-          currentPage={currentPage}
-          pageSize={itemsPerPage}
-          onPageChange={onPageChange}
-        />
-      </div>
-      <div class="container mx-auto">
-        <div class="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 px-4">
-          {paginatedCountries.map(
-            ({ id, common, flags, region, subregion }) => (
-              <div key={id}>
-                <CountryCard
-                  name={id}
-                  region={region}
-                  subregion={subregion}
-                  flags={flags}
-                />
-              </div>
-            )
-          )}
-        </div>
-      </div>
+      <GenericList
+        items={items}
+        itemsPerPage={itemsPerPage}
+        cardfn={Country}
+      ></GenericList>
     </>
   );
 }

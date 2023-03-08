@@ -2,9 +2,9 @@ import Image from "next/image";
 import Link from "next/link";
 import Tag from "./tag";
 
-export default function Country({ name, region, subregion, flags }) {
+export default function Country({ id, region, subregion, flags }) {
   return (
-    <Link href={`/country/${name}`}>
+    <Link href={`/country/${id}`}>
       <div className="flex flex-col items-center bg-white md:flex-row md:max-w-xl hover:bg-slate-100 ">
         {flags && flags.svg && (
           <Image
@@ -13,12 +13,12 @@ export default function Country({ name, region, subregion, flags }) {
             height={0}
             width={0}
             src={flags.svg}
-            alt={`Flag of ${name}`}
+            alt={`Flag of ${id}`}
           />
         )}
-        <div class="flex flex-col justify-between p-4 leading-normal">
+        <div className="flex flex-col justify-between p-4 leading-normal">
           <div>
-            <h2 className="text-1xl font-bold ">{name}</h2>
+            <h2 className="text-1xl font-bold ">{id}</h2>
           </div>
           <div className="grid flex-col justify-items-start mt-10">
             <Tag text={region}></Tag>

@@ -29,41 +29,50 @@ export default function Layout({ children, home }) {
       <main>{children}</main>
       {!home && <ButtonLink href="/" text=" ← Back to home"></ButtonLink>}
 
-      <footer className="mt-auto p-4 bg-slate-50 sm:p-6 ">
+      <footer className="mt-auto p-4 bg-slate-100 sm:p-6 ">
         <div className="md:flex md:justify-between">
-          <div class="mb-6 md:mb-0">
+          <div className="mb-6 md:mb-0">
             <span>3C - Countries, Capitals & Currencies</span>
           </div>
-          <div class="grid grid-cols-2 gap-8 sm:gap-6 sm:grid-cols-3">
+          <div className="grid grid-cols-2 gap-8 sm:gap-6 sm:grid-cols-3">
             <div>
-              <h2 class="mb-6 text-sm font-semibold text-gray-900 uppercase ">
+              <h2 className="mb-6 text-sm font-semibold text-gray-900 uppercase ">
                 Resources
               </h2>
-              <ul class="text-gray-600 ">
+              <ul className="text-gray-600 ">
                 <li>
-                  <a href="https://nextjs.com/" class="hover:underline">
+                  <a href="https://nextjs.com/" className="hover:underline">
                     NextJS
                   </a>
                 </li>
                 <li>
-                  <a href="https://restcountries.com/" class="hover:underline">
+                  <a
+                    href="https://restcountries.com/"
+                    className="hover:underline"
+                  >
                     REST Countries
                   </a>
                 </li>
                 <li>
-                  <a href="https://tailwindcss.com/" class="hover:underline">
+                  <a
+                    href="https://tailwindcss.com/"
+                    className="hover:underline"
+                  >
                     Tailwind CSS
                   </a>
                 </li>
               </ul>
             </div>
             <div>
-              <h2 class="mb-6 text-sm font-semibold text-gray-900 uppercase ">
+              <h2 className="mb-6 text-sm font-semibold text-gray-900 uppercase ">
                 Follow us
               </h2>
-              <ul class="text-gray-600 ">
-                <li class="mb-4">
-                  <a href="https://github.com/ybdev7" class="hover:underline ">
+              <ul className="text-gray-600 ">
+                <li className="mb-4">
+                  <a
+                    href="https://github.com/ybdev7"
+                    className="hover:underline "
+                  >
                     Github
                   </a>
                 </li>
