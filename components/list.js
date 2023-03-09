@@ -1,5 +1,4 @@
 import { v4 as uuidv4 } from "uuid";
-import { useEffect, useState } from "react";
 import Pagination from "./pagination";
 import { usePaginate } from "../hooks/usePaginate";
 
@@ -10,14 +9,8 @@ function GenericList({
   currentPage,
   cardfn,
 }) {
-  //   const [currentPage, setCurrentPage] = useState(1);
-  //   const onPageChange = (page) => {
-  //     setCurrentPage(page);
-  //   };
-
   const paginatedItems = usePaginate(items, currentPage, itemsPerPage);
 
-  console.log(paginatedItems.length);
   return (
     <>
       <div className="mx-10 my-2">

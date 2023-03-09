@@ -1,7 +1,6 @@
 import Layout from "../../components/layout";
 import Image from "next/image";
 import { getAllCountriesIds, getCountryData } from "../../lib/country";
-import Link from "next/link";
 import ButtonLink from "../../components/buttonlink";
 
 export async function getStaticProps({ params }) {
@@ -34,7 +33,7 @@ export default function Country({ countryData }) {
           <div className="grid grid-col-1 max-w-1/2">
             <Image
               priority
-              className="shadow  max-w-full h-auto align-middle border-none "
+              className="rounded-t-lg shadow  max-w-full h-auto align-middle border-none "
               src={countryData.flags.svg}
               height={670}
               width={770}
@@ -50,45 +49,51 @@ export default function Country({ countryData }) {
               {value.official}
             </h2>
           ))}
-          <label className="font-bold">Population: </label>
-          <label className="text-slate-900">
-            {countryData.population.toLocaleString()}
-          </label>
+          <div className="ml-2 mb-3">
+            <label className="font-bold">Population: </label>
+            <label className="text-slate-900">
+              {countryData.population.toLocaleString()}
+            </label>
 
-          <br />
+            <br />
 
-          <label className="font-bold">Capital: </label>
-          <label className="text-slate-900">{countryData.capital}</label>
-          <br />
-          <label className="font-bold">Languages: </label>
-          <label className="text-slate-900">
-            {Object.entries(countryData.languages)
-              .map(([key, value]) => value)
-              .join(", ")}
-          </label>
+            <label className="font-bold">Capital: </label>
+            <label className="text-slate-900">{countryData.capital}</label>
+            <br />
+            <label className="font-bold">Languages: </label>
+            <label className="text-slate-900">
+              {Object.entries(countryData.languages)
+                .map(([key, value]) => value)
+                .join(", ")}
+            </label>
 
-          <br />
+            <br />
 
-          <label className="font-bold">Currencies: </label>
-          <label className="text-slate-900">
-            {Object.entries(countryData.currencies)
-              .map(([key, value]) => `${value.symbol} (${key} - ${value.name})`)
-              .join(", ")}
-          </label>
-          {countryData.region && countryData.region.length > 0 && (
-            <>
-              <br />
-              <label className="font-bold">Region: </label>
-              <label className="text-slate-900">{countryData.region}</label>
-            </>
-          )}
-          {countryData.region && countryData.subregion.length > 0 && (
-            <>
-              <br />
-              <label className="font-bold">Subregion: </label>
-              <label className="text-slate-900">{countryData.subregion}</label>
-            </>
-          )}
+            <label className="font-bold">Currencies: </label>
+            <label className="text-slate-900">
+              {Object.entries(countryData.currencies)
+                .map(
+                  ([key, value]) => `${value.symbol} (${key} - ${value.name})`
+                )
+                .join(", ")}
+            </label>
+            {countryData.region && countryData.region.length > 0 && (
+              <>
+                <br />
+                <label className="font-bold">Region: </label>
+                <label className="text-slate-900">{countryData.region}</label>
+              </>
+            )}
+            {countryData.region && countryData.subregion.length > 0 && (
+              <>
+                <br />
+                <label className="font-bold">Subregion: </label>
+                <label className="text-slate-900">
+                  {countryData.subregion}
+                </label>
+              </>
+            )}
+          </div>
         </div>
       </div>
       <div

@@ -1,7 +1,11 @@
 import { v4 as uuidv4 } from "uuid";
 import { useState } from "react";
 import { continents } from "./country";
-
+/**
+ * HOC that adds a dropdown of continents
+ * @param {*} WrappedComponent
+ * @returns WithContinent
+ */
 export default function withContinent(WrappedComponent) {
   const WithContinent = ({ children, ...props }) => {
     const handleContinentChange = (e) => {

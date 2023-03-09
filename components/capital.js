@@ -25,17 +25,4 @@ export default function CapitalCard({ capital, country }) {
       </div>
     </div>
   );
-
-  //   return (
-  //     <Link href={`/country/${country}`}>
-  //       <div className="flex flex-row items-center">
-  //         <div>
-  //           <FaMapMarkerAlt />
-  //         </div>
-  //         <div>
-  //           <label>{country}</label>
-  //         </div>
-  //       </div>
-  //     </Link>
-  //   );
 }

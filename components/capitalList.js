@@ -13,7 +13,6 @@ function _capitalList({ allCapitals, continent, sortOrder, itemsPerPage }) {
   };
 
   function sortBy(capitalA, capitalB) {
-    // console.log(capitalA.capital);
     if (!capitalA || !capitalA.capital) return 0;
     else if (!capitalB || !capitalB.capital) return 0;
     else if (sortOrder === sort[0])

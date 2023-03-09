@@ -1,7 +1,11 @@
 import { v4 as uuidv4 } from "uuid";
 import { useState } from "react";
 import { continents, itemsPerPage, sort } from "./country";
-
+/**
+ * HOC that adds a dropdown of Items Per Page
+ * @param {*} WrappedComponent
+ * @returns WithPerPage
+ */
 export default function withPerPage(WrappedComponent) {
   const WithPerPage = ({ children, ...props }) => {
     const [pageSize, setPageSize] = useState(itemsPerPage[2]);

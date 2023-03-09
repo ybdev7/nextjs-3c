@@ -1,7 +1,12 @@
 import { v4 as uuidv4 } from "uuid";
 import { useState } from "react";
-import { continents, sort } from "./country";
+import { sort } from "./country";
 
+/**
+ * HOC that adds a sort dropdown
+ * @param {*} WrappedComponent
+ * @returns WithSort
+ */
 export default function withSort(WrappedComponent) {
   const WithSort = ({ children, ...props }) => {
     const handleSortOrderChange = (e) => {
