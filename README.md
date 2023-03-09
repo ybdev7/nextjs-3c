@@ -1,5 +1,9 @@
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`npx create-next-app@latest nextjs-3c --use-npm --example "https://github.com/vercel/next-learn/tree/master/basics/learn-starter"`](https://nextjs.org/learn/basics/create-nextjs-app/setup).
 
+## About
+
+Shows a list of countries, a list of capitals and country details
+
 ## Getting Started
 
 Install the packages and run the development server:

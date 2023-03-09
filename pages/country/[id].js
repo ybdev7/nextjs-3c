@@ -1,3 +1,4 @@
+import { v4 as uuidv4 } from "uuid";
 import Layout from "../../components/layout";
 import Image from "next/image";
 import { getAllCountriesIds, getCountryData } from "../../lib/country";
@@ -27,7 +28,7 @@ export default function Country({ countryData }) {
         {/* Card */}
         <div
           className="w-4/5 md:w-2/3 lg:w-2/5 
-          bg-slate-50 hover:bg-slate-100 border-slate-400 border rounded-lg shadow-md hover:shadow-lg "
+          bg-slate-50 border-slate-400 border rounded-lg shadow-md  "
         >
           {/* container for image */}
           <div className="grid grid-col-1 max-w-1/2">
@@ -45,7 +46,7 @@ export default function Country({ countryData }) {
             {countryData.id}
           </h2>
           {Object.entries(countryData.nativeNames).map(([key, value]) => (
-            <h2 className="text-center text-salte-800 text-xl">
+            <h2 key={uuidv4()} className="text-center text-salte-800 text-xl">
               {value.official}
             </h2>
           ))}

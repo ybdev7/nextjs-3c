@@ -9,10 +9,9 @@ export default function Layout({ children, home }) {
   return (
     <div className="flex flex-col min-h-screen">
       <Head>
-        <title>{siteTitle} </title>
+        <title>{siteTitle}</title>
         <link rel="icon" href="/favicon.ico" />
         <meta name="description" content="Countries website using Next.js" />
-
         <meta name="og:title" content={siteTitle} />
       </Head>
       <header>
